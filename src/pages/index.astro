@@ -1,0 +1,605 @@
+---
+import { getPage } from "@lib/contentParser.astro";
+import Layout from '@layouts/Layout.astro';
+import Banner from "@components/Banner";
+
+const homepage = await getPage('pages', '-index');
+const { banner } = homepage?.data ?? {};
+
+const seoTitle = "Barbershop Terbaik di Harapan Indah Bekasi | Haircut Inside Barbershop";
+const seoDesc  = "Haircut Inside Barbershop adalah barbershop premium di Harapan Indah Bekasi yang menyediakan potong rambut pria, fade haircut, cuci rambut, dan layanan grooming profesional.";
+const seoKw    = "Barbershop Harapan Indah, Pangkas Rambut Harapan Indah, Barbershop Bekasi, Barbershop Terdekat, Potong Rambut Pria, Hair Studio Harapan Indah, Barbershop Inside, barbershop terbaik Harapan Indah Bekasi";
+
+const layanan = [
+  {
+    title: "Potong Rambut Pria",
+    desc: "Potong rambut pria profesional dengan hasil presisi. Barber berpengalaman siap memberikan gaya terbaik sesuai karakter wajah dan selera Anda di Harapan Indah Bekasi.",
+    link:"https://wa.me/6281234567890?text=Halo%20saya%20mau%20booking%20Potong%20Rambut%20Pria"
+  },
+  {
+    title: "Fade Haircut",
+    desc: "Spesialis fade haircut — skin fade, low fade, mid fade, high fade. Teknik blending sempurna untuk tampilan modern dan rapi khas barbershop Bekasi.",
+    link:"https://wa.me/6281234567890?text=Halo%20saya%20mau%20booking%20Potong%20Rambut%20Pria2"
+  },
+  {
+    title: "Hair Styling",
+    desc: "Penataan rambut profesional menggunakan produk berkualitas. Tampilan tahan lama yang sesuai gaya hidup Anda dari tangan barber terlatih.",
+    link:"https://wa.me/6281234567890?text=Halo%20saya%20mau%20booking%20Potong%20Rambut%20Pria3"
+
+  },
+  {
+    title: "Cuci Rambut",
+    desc: "Layanan cuci rambut lengkap dengan pijatan kepala yang menyegarkan. Tersedia setelah potong maupun sebagai layanan terpisah di Haircut Inside Barbershop.",
+    link:"https://wa.me/6281234567890?text=Halo%20saya%20mau%20booking%20Potong%20Rambut%20Pria4"
+  }
+];    
+
+const alasan = [
+  {
+    title: "Barber Profesional & Berpengalaman",
+    desc: "Setiap barber di Haircut Inside Barbershop terlatih secara profesional dan berpengalaman di bidang potong rambut pria, fade haircut, dan grooming modern.",
+  },
+  {
+    title: "Harga Terjangkau & Transparan",
+    desc: "Grooming berkualitas tidak harus mahal. Semua harga tercantum jelas dan terjangkau — tanpa biaya tersembunyi untuk warga Harapan Indah Bekasi."
+  },
+  {
+    title: "Suasana Nyaman & Modern",
+    desc: "Interior barbershop kami dirancang untuk memberikan pengalaman premium — bersih, modern, dan ramah untuk semua usia termasuk anak-anak."
+  },
+  {
+    title: "Lokasi Strategis di Harapan Indah",
+    desc: "Berlokasi di pusat Kota Harapan Indah, Bekasi. Mudah diakses dari seluruh penjuru kawasan Harapan Indah dan Bekasi Utara."
+  },
+  {
+    title: "Buka Hingga Malam",
+    desc: "Haircut Inside Barbershop buka hingga malam agar Anda bisa potong rambut setelah bekerja atau beraktivitas — cocok untuk profesional aktif."
+  },
+  {
+    title: "Ramah Anak",
+    desc: "Layanan potong rambut anak-anak dengan barber yang sabar dan berpengalaman. Anak Anda akan nyaman dan senang setiap kunjungan."
+  }
+];
+
+const hargaList = [
+  { label: "Potong Rambut Pria",        price: "Rp 35.000" },
+  { label: "Potong Rambut Anak",         price: "Rp 25.000" },
+  { label: "Fade Haircut",               price: "Rp 45.000" },
+  { label: "Potong + Cuci Rambut",       price: "Rp 50.000" },
+  { label: "Hair Styling",               price: "Rp 30.000" },
+  { label: "Cuci Rambut + Pijat Kepala", price: "Rp 35.000" }
+];
+
+const testimoni = [
+  {
+    nama: "Rizky A.",
+    teks: "Barber-nya skilled banget, hasilnya rapi dan sesuai request. Fade-nya clean, recommended banget buat yang mau potong di Harapan Indah!"
+  },
+  {
+    nama: "Danu P.",
+    teks: "Tempatnya nyaman, bersih, dan harganya reasonable. Udah jadi langganan di sini sejak setahun lalu. Barber-nya friendly juga."
+  },
+  {
+    nama: "Hendra S.",
+    teks: "Bawa anak potong rambut di sini, anaknya nggak takut dan hasilnya bagus. Recommended untuk keluarga yang cari barbershop di Bekasi."
+  },
+  {
+    nama: "Fajar M.",
+    teks: "Buka sampai malam jadi bisa potong setelah pulang kerja. Lokasi di Harapan Indah gampang dicari, pelayanannya cepat dan profesional."
+  }
+];
+
+const faq = [
+  {
+    q: "Berapa harga potong rambut di Harapan Indah?",
+    a: "Harga potong rambut di Haircut Inside Barbershop Harapan Indah mulai Rp 25.000 untuk anak-anak dan Rp 35.000 untuk dewasa. Layanan fade haircut tersedia mulai Rp 45.000. Semua harga sudah termasuk cuci rambut opsional."
+  },
+  {
+    q: "Apakah Haircut Inside Barbershop menerima anak-anak?",
+    a: "Ya, Haircut Inside Barbershop sangat ramah anak. Kami memiliki barber yang sabar dan berpengalaman menangani anak-anak dari berbagai usia. Anak-anak biasanya merasa nyaman dan tidak takut potong rambut di sini."
+  },
+  {
+    q: "Apakah tersedia layanan fade haircut?",
+    a: "Tentu! Fade haircut adalah salah satu keahlian utama kami. Kami menyediakan berbagai jenis fade: skin fade, low fade, mid fade, dan high fade, dengan hasil blending yang bersih dan rapi."
+  },
+  {
+    q: "Apakah buka sampai malam?",
+    a: "Ya, Haircut Inside Barbershop buka hingga malam hari untuk mengakomodasi pelanggan yang sibuk bekerja di siang hari. Cek jam operasional terkini melalui Google Maps atau media sosial kami."
+  },
+  {
+    q: "Apa barbershop terbaik di Harapan Indah Bekasi?",
+    a: "Haircut Inside Barbershop adalah pilihan utama barbershop di Harapan Indah Bekasi. Dengan barber profesional, harga terjangkau, suasana nyaman, dan lokasi strategis di Kota Harapan Indah, kami menjadi rekomendasi barbershop terpercaya di kawasan Bekasi."
+  },
+  {
+    q: "Apakah tersedia cuci rambut setelah potong?",
+    a: "Ya, layanan cuci rambut tersedia setelah potong. Kami juga menyediakan paket potong rambut + cuci rambut dengan harga spesial, plus layanan pijat kepala yang menyegarkan."
+  }
+];
+
+const galeri = [
+  { src: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=900&auto=format&q=80", alt: "Barber profesional memotong rambut pria di Haircut Inside Barbershop Harapan Indah Bekasi", wide: true },
+  { src: "https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=900&auto=format&q=80", alt: "Interior modern Haircut Inside Barbershop di Kota Harapan Indah Bekasi", wide: true },
+  { src: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=600&auto=format&q=80", alt: "Proses fade haircut di barbershop terbaik Harapan Indah Bekasi", wide: false },
+  { src: "https://images.unsplash.com/photo-1562004760-aceed7bb0fe3?w=600&auto=format&q=80", alt: "Potong rambut pria profesional di barbershop Bekasi", wide: false },
+  { src: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=600&auto=format&q=80", alt: "Hasil haircut fade rapi di Haircut Inside Barbershop Harapan Indah", wide: false },
+  { src: "https://images.unsplash.com/photo-1584515933487-779824d29309?w=600&auto=format&q=80", alt: "Suasana barbershop premium kawasan Harapan Indah Kota Bekasi", wide: false }
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["LocalBusiness", "HairSalon"],
+      "@id": "https://hibarbershop.com/#barbershop",
+      "name": "Haircut Inside Barbershop",
+      "alternateName": "Barbershop Inside Harapan Indah",
+      "description": "Barbershop premium di Harapan Indah Bekasi yang menyediakan potong rambut pria, fade haircut, cuci rambut, dan layanan grooming profesional.",
+      "url": "https://hibarbershop.com",
+      "telephone": "+62-XXX-XXXX-XXXX",
+      "priceRange": "Rp 25.000 – Rp 75.000",
+      "image": "https://hibarbershop.com/images/ogimage.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "[Nama Jalan dan Nomor]",
+        "addressLocality": "Harapan Indah",
+        "addressRegion": "Bekasi",
+        "postalCode": "17131",
+        "addressCountry": "ID"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-6.1750",
+        "longitude": "107.0000"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "09:00",
+          "closes": "21:00"
+        }
+      ],
+      "hasMap": "https://maps.google.com/?q=Harapan+Indah+Bekasi",
+      "areaServed": { "@type": "Place", "name": "Harapan Indah, Bekasi, Jawa Barat" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faq.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": { "@type": "Answer", "text": item.a }
+      }))
+    }
+  ]
+};
+---
+
+<Layout title={seoTitle} description={seoDesc} keywords={seoKw}>
+
+  <!-- ══════════════════════════════════════════════
+       HERO — H1 teks utama SEO, anchor: /
+  ══════════════════════════════════════════════ -->
+  <Banner banner={banner} client:load />
+
+  <!-- Hero CTA strip -->
+  <div class="pb-16 md:pb-20 pt-10 -mt-2 relative z-10">
+    <div class="container">
+      <div class="flex flex-wrap justify-center gap-4" data-aos="fade-up-sm" data-aos-delay="200">
+        <a href="#layanan" class="button button-dark">
+          <span>Lihat Layanan</span>
+        </a>
+        <a href="#harga" class="button">
+          <span>Cek Harga</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════
+       ABOUT  #about
+       Keywords: Barbershop Harapan Indah, Barbershop Bekasi
+  ══════════════════════════════════════════════ -->
+  <section id="about" class="py-20 md:py-28 overflow-hidden">
+    <div class="container">
+      <div class="row items-center gy-10 md:gx-12">
+
+        <div class="lg:col-6" data-aos="fade-right" data-aos-duration="600">
+          <div class="relative">
+            <img
+              src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=750&auto=format&q=80"
+              alt="Interior premium Haircut Inside Barbershop di Harapan Indah Bekasi — suasana modern dan profesional"
+              width="750"
+              height="520"
+              class="rounded-2xl w-full object-cover"
+              loading="lazy"
+            />
+            <div class="absolute -bottom-5 -right-4 md:-right-6 bg-dark border border-white/10 rounded-2xl p-5 md:p-6 hidden sm:block">
+              <div class="text-4xl md:text-5xl font-secondary font-medium" style="color:#BE9651;">5+</div>
+              <div class="text-white/60 text-sm mt-1 leading-snug">Tahun Melayani<br />Harapan Indah</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-6" data-aos="fade-left" data-aos-duration="600">
+          <span class="font-secondary text-xl block mb-3" style="color:#BE9651;">Tentang Kami</span>
+          <h2 class="text-4xl md:text-5xl font-secondary font-medium mb-6 leading-tight">
+            Tentang Haircut Inside Barbershop di Harapan Indah
+          </h2>
+          <p class="text-white/75 text-lg font-light mb-4 leading-relaxed">
+            <strong class="text-white">Haircut Inside </strong> adalah barbershop terpercaya yang berlokasi
+            di jantung <strong class="text-white">Kota Harapan Indah, Bekasi</strong>. Hadir untuk
+            melayani kebutuhan grooming pria di Harapan Indah dan sekitarnya dengan standar kualitas
+            premium namun harga yang tetap terjangkau.
+          </p>
+          <p class="text-white/75 text-lg font-light mb-8 leading-relaxed">
+            Dengan barber profesional berpengalaman, suasana modern yang nyaman, dan layanan lengkap
+            mulai dari potong rambut pria, <em>fade haircut</em>, cuci rambut, hingga hair styling —
+            <strong class="text-white">Haircut Inside Barbershop Harapan Indah</strong> adalah destinasi grooming
+            pilihan warga <strong class="text-white">Bekasi</strong>.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="#layanan" class="button button-dark"><span>Lihat Layanan</span></a>
+            <a href="#lokasi" class="button"><span>Temukan Kami</span></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       LAYANAN  #layanan
+       H2: Layanan Potong Rambut Pria & Grooming
+       H3: Potong Rambut Pria · Fade Haircut · Hair Styling · Cuci Rambut
+  ══════════════════════════════════════════════ -->
+  <section id="layanan" class="py-20 md:py-28 bg-white/[0.025]">
+    <div class="container">
+
+      <div class="row mb-14">
+        <div class="col-12 text-center">
+          <span class="font-secondary text-xl block mb-3" style="color:#BE9651;">Apa yang Kami Tawarkan</span>
+          <h2 class="text-4xl md:text-5xl font-secondary font-medium">
+            Layanan Potong Rambut Pria &amp; Grooming
+          </h2>
+          <p class="text-white/75 text-lg font-light mt-4 max-w-2xl mx-auto leading-relaxed">
+            Barbershop Harapan Indah dengan layanan lengkap — dari potong rambut klasik hingga
+            fade haircut modern untuk tampilan terbaik Anda.
+          </p>
+        </div>
+      </div>
+
+      <div class="row md:gx-6 gy-6">
+        {layanan.map((item, i) => (
+          <div class="lg:col-3 md:col-6" data-aos="fade-up-sm" data-aos-delay={i * 75}>
+            <div class="h-full border border-white/10 rounded-2xl p-8 hover:border-white/30 transition-colors duration-300">
+              <div class="font-secondary text-3xl font-medium mb-6" style="color:#BE9651;">
+                {String(i + 1).padStart(2, '0')}
+              </div>
+              <h3 class="text-2xl font-secondary font-medium mb-4">{item.title}</h3>
+              <p class="text-white/75 font-light leading-relaxed">{item.desc}</p>
+              <a class="button button-dark mt-4 px-10" href={item.link} target="_blank"><span>tes</span></a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="#harga" class="button button-dark"><span>Lihat Harga Lengkap</span></a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       ALASAN  #alasan
+       Keywords: barbershop terbaik / murah dan bagus di Harapan Indah
+  ══════════════════════════════════════════════ -->
+  <section id="alasan" class="py-20 md:py-28">
+    <div class="container">
+
+      <div class="row mb-14 items-end">
+        <div class="sm:col-8 order-2 sm:order-1">
+          <h2 class="text-4xl md:text-5xl font-secondary font-medium -mt-[6px] text-center sm:text-left">
+            Kenapa Memilih Haircut Inside Barbershop
+          </h2>
+        </div>
+        <div class="sm:col-4 order-1 sm:order-2 block mb-4 sm:mb-0 text-center sm:text-right">
+          <span class="font-secondary text-2xl leading-none" style="color:#BE9651;">
+            Terbaik di Harapan Indah
+          </span>
+        </div>
+      </div>
+
+      <div class="row md:gx-6 gy-6">
+        {alasan.map((item, i) => (
+          <div class="lg:col-4 md:col-6" data-aos="fade-right" data-aos-delay={i * 75}>
+            <div class="border-t border-white/10 pt-8">
+              <h3 class="text-2xl font-secondary font-medium mb-4 flex items-start gap-3">
+                <span class="font-secondary text-sm leading-none pt-2 flex-shrink-0" style="color:#BE9651;">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <span>{item.title}</span>
+              </h3>
+              <p class="text-white/75 font-light text-lg leading-relaxed">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       HARGA  #harga
+       Keywords: Harga potong rambut di Barbershop Inside Harapan Indah
+  ══════════════════════════════════════════════ -->
+  <section id="harga" class="py-20 md:py-28 bg-white/[0.025]">
+    <div class="container">
+
+      <div class="row mb-14">
+        <div class="col-12 text-center">
+          <span class="font-secondary text-xl block mb-3" style="color:#BE9651;">Transparan &amp; Terjangkau</span>
+          <h2 class="text-4xl md:text-5xl font-secondary font-medium">
+            Harga Potong Rambut di Haircut Inside Barbershop Harapan Indah
+          </h2>
+          <p class="text-white/75 text-lg font-light mt-4 max-w-2xl mx-auto leading-relaxed">
+            Harga potong rambut di barbershop Harapan Indah yang terjangkau dan transparan
+            — tanpa biaya tersembunyi, langsung bayar sesuai daftar.
+          </p>
+        </div>
+      </div>
+
+      <div class="row justify-center">
+        <div class="lg:col-8 col-12" data-aos="fade-up-sm">
+          <div class="border border-white/10 rounded-2xl overflow-hidden">
+            {hargaList.map((item, i) => (
+              <div
+                class={`flex justify-between items-center px-6 md:px-8 py-5 transition-colors duration-200 hover:bg-white/5 ${i < hargaList.length - 1 ? 'border-b border-white/10' : ''}`}
+              >
+                <span class="text-lg font-medium">{item.label}</span>
+                <span class="text-xl font-secondary font-medium ml-4 flex-shrink-0" style="color:#BE9651;">{item.price}</span>
+              </div>
+            ))}
+          </div>
+          <p class="text-white/40 text-sm text-center mt-4">
+            * Harga dapat berubah sewaktu-waktu. Hubungi kami untuk konfirmasi harga terkini.
+          </p>
+          <div class="text-center mt-8">
+            <a href="#lokasi" class="button button-dark"><span>Kunjungi Kami Sekarang</span></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       GALERI  #galeri
+  ══════════════════════════════════════════════ -->
+  <section id="galeri" class="py-20 md:py-28">
+    <div class="container">
+
+      <div class="row mb-14">
+        <div class="col-12 text-center">
+          <span class="font-secondary text-xl block mb-3" style="color:#BE9651;">Hasil Kerja Kami</span>
+          <h2 class="text-4xl md:text-5xl font-secondary font-medium">Galeri</h2>
+          <p class="text-white/75 text-lg font-light mt-4 max-w-xl mx-auto leading-relaxed">
+            Suasana dan hasil potong rambut pria di Haircut Inside Barbershop Harapan Indah Bekasi.
+          </p>
+        </div>
+      </div>
+
+      <div class="row md:gx-4 gy-4">
+        {galeri.map((item, i) => (
+          <div
+            class={item.wide ? 'md:col-6' : 'md:col-4'}
+            data-aos="fade-up-sm"
+            data-aos-delay={i * 60}
+          >
+            <div class="overflow-hidden rounded-2xl bg-white/5">
+              <img
+                src={item.src}
+                alt={item.alt}
+                width={item.wide ? 900 : 600}
+                height={item.wide ? 560 : 420}
+                class="w-full object-cover hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       TESTIMONI  #testimoni
+  ══════════════════════════════════════════════ -->
+  <section id="testimoni" class="py-20 md:py-28 bg-white/[0.025]">
+    <div class="container">
+
+      <div class="row mb-14">
+        <div class="col-12 text-center">
+          <span class="font-secondary text-xl block mb-3" style="color:#BE9651;">Kata Pelanggan Kami</span>
+          <h2 class="text-4xl md:text-5xl font-secondary font-medium">Testimoni Pelanggan</h2>
+          <p class="text-white/75 text-lg font-light mt-4 max-w-xl mx-auto leading-relaxed">
+            Apa kata pelanggan setia Haircut Inside Barbershop di Harapan Indah Bekasi tentang layanan kami.
+          </p>
+        </div>
+      </div>
+
+      <div class="row md:gx-6 gy-6">
+        {testimoni.map((item, i) => (
+          <div class="md:col-6 lg:col-3" data-aos="fade-up-sm" data-aos-delay={i * 75}>
+            <div class="h-full border border-white/10 rounded-2xl p-6 flex flex-col">
+              <div class="mb-4 text-lg tracking-widest" style="color:#BE9651;" aria-label="5 bintang">
+                &#9733;&#9733;&#9733;&#9733;&#9733;
+              </div>
+              <p class="text-white/75 font-light leading-relaxed mb-6 flex-1">
+                &ldquo;{item.teks}&rdquo;
+              </p>
+              <div class="font-medium text-sm" style="color:#BE9651;">— {item.nama}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       FAQ  #faq
+       H3 per pertanyaan — eligible rich result FAQPage
+  ══════════════════════════════════════════════ -->
+  <section id="faq" class="py-20 md:py-28">
+    <div class="container">
+
+      <div class="row mb-14">
+        <div class="col-12 text-center">
+          <span class="font-secondary text-xl block mb-3" style="color:#BE9651;">FAQ</span>
+          <h2 class="text-4xl md:text-5xl font-secondary font-medium">
+            Pertanyaan yang Sering Diajukan
+          </h2>
+          <p class="text-white/75 text-lg font-light mt-4 max-w-xl mx-auto leading-relaxed">
+            Jawaban untuk pertanyaan umum seputar layanan barbershop di Harapan Indah Bekasi.
+          </p>
+        </div>
+      </div>
+
+      <div class="row justify-center">
+        <div class="lg:col-8 col-12">
+          {faq.map((item, i) => (
+            <details
+              class="border-t border-white/10 py-6 faq-item"
+              data-aos="fade-up-sm"
+              data-aos-delay={i * 50}
+            >
+              <summary class="cursor-pointer list-none flex justify-between items-start gap-4">
+                <h3 class="text-xl font-secondary font-medium faq-q">{item.q}</h3>
+                <span class="faq-icon text-2xl text-white/40 flex-shrink-0 leading-none mt-0.5" aria-hidden="true">+</span>
+              </summary>
+              <p class="text-white/75 font-light text-lg leading-relaxed mt-4 pr-8">{item.a}</p>
+            </details>
+          ))}
+          <div class="border-t border-white/10"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       LOKASI  #lokasi
+       Keywords: Harapan Indah · Kota Harapan Indah · Bekasi
+  ══════════════════════════════════════════════ -->
+  <section id="lokasi" class="py-20 md:py-28 bg-white/[0.025]">
+    <div class="container">
+
+      <div class="row mb-14">
+        <div class="col-12 text-center">
+          <span class="font-secondary text-xl block mb-3" style="color:#BE9651;">Temukan Kami</span>
+          <h2 class="text-4xl md:text-5xl font-secondary font-medium">
+            Hadir di Kota Harapan Indah Bekasi
+          </h2>
+          <p class="text-white/75 text-lg font-light mt-4 max-w-2xl mx-auto leading-relaxed">
+           Haircut Inside berlokasi strategis di kawasan <strong class="text-white">Harapan Indah,
+            Bekasi</strong> — mudah dijangkau dari seluruh penjuru Kota Harapan Indah,
+            Bekasi Utara, dan sekitarnya.
+          </p>
+        </div>
+      </div>
+
+      <div class="row gy-10 items-start md:gx-8">
+
+        <div class="lg:col-5" data-aos="fade-right">
+          <div class="space-y-4">
+
+            <div class="border border-white/10 rounded-2xl p-6">
+              <h3 class="font-secondary text-xl font-medium mb-3" style="color:#BE9651;">Alamat</h3>
+              <address class="text-white/75 font-light not-italic leading-relaxed">
+                [Nama Jalan dan Nomor]<br />
+                Harapan Indah, Bekasi Utara<br />
+                Kota Bekasi, Jawa Barat 17131
+              </address>
+            </div>
+
+            <div class="border border-white/10 rounded-2xl p-6">
+              <h3 class="font-secondary text-xl font-medium mb-3" style="color:#BE9651;">Jam Operasional</h3>
+              <p class="text-white/75 font-light">Senin &ndash; Minggu: <strong class="text-white">09.00 &ndash; 21.00 WIB</strong></p>
+            </div>
+
+            <div class="border border-white/10 rounded-2xl p-6">
+              <h3 class="font-secondary text-xl font-medium mb-3" style="color:#BE9651;">Akses &amp; Landmark</h3>
+              <ul class="text-white/75 font-light space-y-2">
+                <li>&#8226; Dekat Gerbang Tol Harapan Indah</li>
+                <li>&#8226; Mudah diakses dari Bekasi Utara &amp; Bekasi Barat</li>
+                <li>&#8226; Area parkir tersedia</li>
+                <li>&#8226; Melayani: Harapan Indah, Kota Harapan Indah, Bekasi</li>
+              </ul>
+            </div>
+
+            <a
+              href="https://wa.me/"
+              class="button button-dark w-full text-center block"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Chat via WhatsApp</span>
+            </a>
+
+          </div>
+        </div>
+
+        <div class="lg:col-7" data-aos="fade-left">
+          <div
+            class="rounded-2xl overflow-hidden border border-white/10 bg-white/5 flex items-center justify-center"
+            style="min-height: 420px;"
+          >
+            <div class="text-center text-white/50 p-10">
+              <div class="text-6xl mb-5">&#128205;</div>
+              <p class="font-secondary text-2xl mb-1 text-white/80">Haircut Inside Barbershop</p>
+              <p class="font-light mb-2">Harapan Indah, Bekasi</p>
+              <p class="text-sm text-white/40 mb-6">
+                Ganti blok ini dengan embed Google Maps<br />setelah URL GMB tersedia.
+              </p>
+              <a
+                href="https://maps.google.com/?q=Harapan+Indah+Bekasi"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-sm underline underline-offset-4"
+                style="color:#BE9651;"
+              >
+                Buka di Google Maps &#8594;
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       STRUCTURED DATA — JSON-LD @graph
+       LocalBusiness + HairSalon + FAQPage
+  ══════════════════════════════════════════════ -->
+  <Fragment set:html={`<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>`} />
+
+</Layout>
+
+<style is:global>
+  /* FAQ accordion open state */
+  details.faq-item[open] .faq-q  { color: #BE9651; }
+  details.faq-item[open] .faq-icon { transform: rotate(45deg); }
+  .faq-icon { transition: transform 0.25s ease; display: inline-block; }
+</style>

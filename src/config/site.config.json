@@ -1,0 +1,38 @@
+{
+  "metaData": {
+    "title" : "Barbershop Terbaik di Harapan Indah Bekasi | HI Barbershop",
+    "description" : "HI Barbershop adalah barbershop premium di Harapan Indah Bekasi yang menyediakan potong rambut pria, fade haircut, cuci rambut, dan layanan grooming profesional.",
+    "ogImage" : "/images/ogimage.jpg",
+    "keywords" : "Barbershop Harapan Indah, Pangkas Rambut Harapan Indah, Barbershop Bekasi, Barbershop Terdekat, Potong Rambut Pria, Hair Studio Harapan Indah, Barbershop Inside, barbershop terbaik Harapan Indah Bekasi"
+  },
+
+  "logo" : "/images/logo.png",
+  "logoText" : "HI Barbershop",
+  "favicon" : "/images/favicon.png",
+  "baseUrl" : "https://hibarbershop.com/",
+  "basePath" : "/",
+  "trailingSlash" : false,
+
+  "settings" : {
+    "deviceIndicator" : false,
+    "pagination_limit" : 6
+  },
+
+  "socialLinks" : [
+    {
+      "name": "IG",
+      "fullName": "Instagram",
+      "link": "https://instagram.com/"
+    },
+    {
+      "name": "FB",
+      "fullName": "Facebook",
+      "link": "https://facebook.com/"
+    },
+    {
+      "name": "WA",
+      "fullName": "WhatsApp",
+      "link": "https://wa.me/"
+    }
+  ]
+}

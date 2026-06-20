@@ -1,0 +1,474 @@
+---
+import Layout from '@layouts/Layout.astro';
+
+const seoTitle  = "Haircut Inside Barbershop — Bio & Link | Harapan Indah Bekasi";
+const seoDesc   = "Semua link Haircut Inside Barbershop Harapan Indah Bekasi — layanan, harga, galeri, lokasi, WhatsApp, dan media sosial.";
+const seoKw     = "Haircut Inside Barbershop, Barbershop Harapan Indah, Barbershop Bekasi, link barbershop";
+
+const pageLinks = [
+  {
+    group: "Jelajahi Website",
+    accent: "#BE9651",
+    items: [
+      {
+        label: "Website Haircut Inside Barbershop",
+        sub:   "hibarbershop.com — halaman utama",
+        href:  "/",
+        icon:  "◈"
+      },
+      {
+        label: "Layanan Kami",
+        sub:   "Potong pria · Fade haircut · Hair styling · Cuci rambut",
+        href:  "/#layanan",
+        icon:  "✦"
+      },
+      {
+        label: "Daftar Harga",
+        sub:   "Mulai dari Rp 25.000 — transparan & terjangkau",
+        href:  "/#harga",
+        icon:  "◎"
+      },
+      {
+        label: "Galeri",
+        sub:   "Potret hasil kerja barber kami",
+        href:  "/#galeri",
+        icon:  "◻"
+      },
+      {
+        label: "Lokasi & Cara ke Sini",
+        sub:   "Harapan Indah, Bekasi Utara",
+        href:  "/#lokasi",
+        icon:  "◉"
+      },
+      {
+        label: "FAQ",
+        sub:   "Pertanyaan yang sering diajukan",
+        href:  "/#faq",
+        icon:  "◇"
+      },
+    ]
+  },
+  {
+    group: "Hubungi Kami",
+    accent: "#5161BE",
+    items: [
+      {
+        label: "Chat via WhatsApp",
+        sub:   "Booking & tanya langsung — respon cepat",
+        href:  "https://wa.me/",
+        icon:  "✉",
+        external: true
+      },
+      {
+        label: "Instagram",
+        sub:   "@hibarbershop — follow untuk konten terbaru",
+        href:  "https://instagram.com/",
+        icon:  "◈",
+        external: true
+      },
+      {
+        label: "Facebook",
+        sub:   "Haircut Inside Barbershop Harapan Indah",
+        href:  "https://facebook.com/",
+        icon:  "◉",
+        external: true
+      },
+    ]
+  }
+];
+
+const infoChips = [
+  { label: "Jam Buka",  value: "09.00 – 21.00", sub: "Senin – Minggu" },
+  { label: "Lokasi",    value: "Harapan Indah",  sub: "Bekasi, Jawa Barat" },
+  { label: "Layanan",   value: "4 Layanan",       sub: "Potong · Fade · Styling · Cuci" }
+];
+---
+
+<Layout title={seoTitle} description={seoDesc} keywords={seoKw}>
+
+  <div class="bio-root relative min-h-screen py-24 md:py-28 overflow-hidden">
+
+    <!-- ── Dekorasi background ───────────────────────── -->
+    <div class="bio-glow-a" aria-hidden="true"></div>
+    <div class="bio-glow-b" aria-hidden="true"></div>
+    <div class="bio-grid"   aria-hidden="true"></div>
+
+    <div class="container relative z-10">
+      <div class="bio-wrap mx-auto">
+
+        <!-- ════════════════════════════════════════
+             PROFILE CARD
+        ════════════════════════════════════════ -->
+        <div class="bio-profile-card text-center mb-10" data-aos="fade-up-sm">
+
+          <!-- avatar -->
+          <div class="bio-avatar-ring mx-auto mb-5">
+            <img
+              src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=240&h=240&fit=crop&auto=format&q=80"
+              alt="Haircut Inside Barbershop — Barbershop Harapan Indah Bekasi"
+              width="120"
+              height="120"
+              class="bio-avatar"
+              fetchpriority="high"
+            />
+            <!-- <span class="bio-badge" aria-label="Buka sekarang">Buka</span> -->
+          </div>
+
+          <!-- nama -->
+          <h1 class="text-3xl md:text-4xl font-secondary font-medium mb-1 leading-tight">
+            Haircut Inside Barbershop
+          </h1>
+
+          <!-- lokasi badge -->
+          <p class="bio-location">
+            <span class="bio-dot" aria-hidden="true"></span>
+            Harapan Indah &middot; Bekasi
+          </p>
+
+          <!-- tagline -->
+          <p class="text-white/60 font-light leading-relaxed mt-3 max-w-xs mx-auto">
+            Barbershop premium di kawasan Harapan Indah Bekasi — barber profesional, harga terjangkau.
+          </p>
+
+        </div>
+
+
+        <!-- ════════════════════════════════════════
+             INFO CHIPS
+        ════════════════════════════════════════ -->
+        <div class="grid grid-cols-3 gap-3 mb-10" data-aos="fade-up-sm" data-aos-delay="75">
+          {infoChips.map(chip => (
+            <div class="bio-chip text-center">
+              <div class="bio-chip-value">{chip.value}</div>
+              <div class="bio-chip-label">{chip.label}</div>
+              <div class="bio-chip-sub">{chip.sub}</div>
+            </div>
+          ))}
+        </div>
+
+
+        <!-- ════════════════════════════════════════
+             LINK GROUPS
+        ════════════════════════════════════════ -->
+        {pageLinks.map((group, gi) => (
+          <div class="mb-8" data-aos="fade-up-sm" data-aos-delay={150 + gi * 50}>
+
+            <!-- group label -->
+            <div class="bio-group-label mb-3">
+              <span class="bio-group-line"></span>
+              <span class="bio-group-text" style={`color: ${group.accent}`}>{group.group}</span>
+              <span class="bio-group-line"></span>
+            </div>
+
+            <!-- links -->
+            <div class="space-y-3">
+              {group.items.map((item, li) => (
+                <a
+                  href={item.href}
+                  class="bio-link group"
+                  target={item.external ? "_blank" : undefined}
+                  rel={item.external ? "noopener noreferrer" : undefined}
+                  data-aos="fade-up-sm"
+                  data-aos-delay={200 + gi * 50 + li * 40}
+                >
+                  <!-- icon -->
+                  <span class="bio-link-icon" style={`color: ${group.accent}`}>
+                    {item.icon}
+                  </span>
+
+                  <!-- text -->
+                  <span class="bio-link-body">
+                    <span class="bio-link-label group-hover:text-white transition-colors">
+                      {item.label}
+                    </span>
+                    <span class="bio-link-sub">{item.sub}</span>
+                  </span>
+
+                  <!-- arrow -->
+                  <span class="bio-link-arrow" style={`color: ${group.accent}`}>
+                    {item.external ? "↗" : "→"}
+                  </span>
+                </a>
+              ))}
+            </div>
+
+          </div>
+        ))}
+
+
+        <!-- ════════════════════════════════════════
+             FOOTER BIO
+        ════════════════════════════════════════ -->
+        <div class="text-center mt-12 pt-8 border-t border-white/10" data-aos="fade-up-sm" data-aos-delay="400">
+          <p class="text-white/30 text-xs font-light tracking-widest uppercase mb-2">
+            &copy; {new Date().getFullYear()} Haircut Inside Barbershop
+          </p>
+          <p class="text-white/20 text-xs font-light">
+            Harapan Indah &middot; Bekasi Utara &middot; Kota Bekasi
+          </p>
+          <a
+            href="/"
+            class="inline-block mt-6 text-xs font-medium uppercase tracking-widest transition-colors"
+            style="color:#BE9651;"
+          >
+            &larr; Kembali ke Website Utama
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</Layout>
+
+<style is:global>
+
+  /* ── Layout wrapper ─────────────────────────── */
+  .bio-root {
+    background-color: #18181A;
+  }
+
+  /* center & constrain content */
+  .bio-wrap {
+    max-width: 480px;
+  }
+
+  /* ── Background glows ───────────────────────── */
+  .bio-glow-a,
+  .bio-glow-b {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .bio-glow-a {
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(190,150,81,0.07) 0%, transparent 65%);
+  }
+  .bio-glow-b {
+    bottom: 0;
+    right: -15%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(81,97,190,0.06) 0%, transparent 65%);
+  }
+
+  /* subtle dot grid */
+  .bio-grid {
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── Profile card ───────────────────────────── */
+  .bio-profile-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 24px;
+    padding: 2rem 1.5rem 1.75rem;
+  }
+
+  /* avatar ring */
+  .bio-avatar-ring {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    padding: 3px;
+    border-radius: 50%;
+    background: conic-gradient(#BE9651 0%, #e8c97a 30%, #BE9651 60%, #7a5c2a 100%);
+  }
+  .bio-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    border: 3px solid #18181A;
+  }
+
+  /* "Buka" badge */
+  .bio-badge {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    background: #22c55e;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 2px 7px;
+    border-radius: 20px;
+    border: 2px solid #18181A;
+    text-transform: uppercase;
+  }
+
+  /* location line */
+  .bio-location {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-top: 0.25rem;
+  }
+  .bio-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #BE9651;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+
+  /* ── Info chips ─────────────────────────────── */
+  .bio-chip {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 0.75rem 0.5rem;
+  }
+  .bio-chip-value {
+    font-family: var(--font-secondary, serif);
+    font-size: 1rem;
+    font-weight: 500;
+    color: #BE9651;
+    line-height: 1.2;
+  }
+  .bio-chip-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.35);
+    margin-top: 2px;
+  }
+  .bio-chip-sub {
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.25);
+    margin-top: 2px;
+    font-weight: 300;
+  }
+
+  /* ── Group label ────────────────────────────── */
+  .bio-group-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .bio-group-line {
+    flex: 1;
+    height: 1px;
+    background: rgba(255,255,255,0.08);
+  }
+  .bio-group-text {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  /* ── Link card ──────────────────────────────── */
+  .bio-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.02);
+    text-decoration: none;
+    transition: border-color 0.25s ease, background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .bio-link::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(190,150,81,0.05) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .bio-link:hover {
+    border-color: rgba(190,150,81,0.35);
+    background: rgba(255,255,255,0.04);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3), 0 0 0 1px rgba(190,150,81,0.1);
+  }
+  .bio-link:hover::before {
+    opacity: 1;
+  }
+  .bio-link:active {
+    transform: translateY(0);
+  }
+
+  /* icon box */
+  .bio-link-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    transition: background 0.25s ease;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .bio-link:hover .bio-link-icon {
+    background: rgba(190,150,81,0.12);
+    border-color: rgba(190,150,81,0.2);
+  }
+
+  /* text body */
+  .bio-link-body {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    position: relative;
+    z-index: 1;
+  }
+  .bio-link-label {
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .bio-link-sub {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.35);
+    font-weight: 300;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* arrow */
+  .bio-link-arrow {
+    font-size: 1rem;
+    flex-shrink: 0;
+    opacity: 0.4;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    position: relative;
+    z-index: 1;
+  }
+  .bio-link:hover .bio-link-arrow {
+    opacity: 1;
+    transform: translate(2px, -2px);
+  }
+
+</style>
