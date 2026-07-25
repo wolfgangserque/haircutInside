@@ -138,11 +138,11 @@ const capsters = [
 
 const galeri = [
   { src: "/images/gallery/capster-1/01.jpg", fallback: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=900&auto=format&q=80", alt: "Barber profesional memotong rambut pria di Haircut Inside Barbershop Harapan Indah Bekasi", wide: true, capster: "capster-1" },
-  { src: "/images/gallery/general/01.jpg", fallback: "https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=900&auto=format&q=80", alt: "Interior modern Haircut Inside Barbershop di Kota Harapan Indah Bekasi", wide: true, capster: null },
+  { src: "/images/gallery/general/01.jpg", fallback: "https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=900&auto=format&q=80", alt: "Interior modern Haircut Inside Barbershop di Kota Harapan Indah Bekasi", wide: true, capster: "none" },
   { src: "/images/gallery/capster-1/02.jpg", fallback: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=600&auto=format&q=80", alt: "Proses fade haircut di barbershop terbaik Harapan Indah Bekasi", wide: false, capster: "capster-1" },
   { src: "/images/gallery/capster-2/01.jpg", fallback: "https://images.unsplash.com/photo-1562004760-aceed7bb0fe3?w=600&auto=format&q=80", alt: "Potong rambut pria profesional di barbershop Bekasi", wide: false, capster: "capster-2" },
   { src: "/images/gallery/capster-2/02.jpg", fallback: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=600&auto=format&q=80", alt: "Hasil haircut fade rapi di Haircut Inside Barbershop Harapan Indah", wide: false, capster: "capster-2" },
-  { src: "/images/gallery/general/02.jpg", fallback: "https://images.unsplash.com/photo-1584515933487-779824d29309?w=600&auto=format&q=80", alt: "Suasana barbershop premium kawasan Harapan Indah Kota Bekasi", wide: false, capster: null }
+  { src: "/images/gallery/general/02.jpg", fallback: "https://images.unsplash.com/photo-1584515933487-779824d29309?w=600&auto=format&q=80", alt: "Suasana barbershop premium kawasan Harapan Indah Kota Bekasi", wide: false, capster: "none" }
 ];
 
 const jsonLd = {
@@ -468,6 +468,7 @@ const jsonLd = {
         {capsters.map((c) => (
           <button type="button" class="gallery-filter-btn" data-filter={c.id}>{c.name}</button>
         ))}
+        <button type="button" class="gallery-filter-btn" data-filter="none">Tak Berkategori</button>
       </div>
 
       <div class="row md:gx-4 gy-4">
@@ -477,7 +478,7 @@ const jsonLd = {
             data-aos="fade-up-sm"
             data-aos-delay={i * 60}
             data-gallery-item
-            data-capster={item.capster ?? ''}
+            data-capster={item.capster}
           >
             <div class="overflow-hidden rounded-2xl bg-white/5">
               <img
