@@ -21,26 +21,21 @@ const seoKw    = "Barbershop Harapan Indah, Pangkas Rambut Harapan Indah, Barber
 const layanan = [
   {
     title: "Potong Rambut Pria",
-    desc: "Potong rambut pria profesional dengan hasil presisi. Barber berpengalaman siap memberikan gaya terbaik sesuai karakter wajah dan selera Anda di Harapan Indah Bekasi.",
-    link:"https://wa.me/6289636658985?text=Halo%20saya%20mau%20booking%20Potong%20Rambut%20Pria"
+    desc: "Potong rambut pria profesional dengan hasil presisi. Barber berpengalaman siap memberikan gaya terbaik sesuai karakter wajah dan selera Anda di Harapan Indah Bekasi."
   },
   {
     title: "Fade Haircut",
-    desc: "Spesialis fade haircut — skin fade, low fade, mid fade, high fade. Teknik blending sempurna untuk tampilan modern dan rapi khas barbershop Bekasi.",
-    link:"https://wa.me/6289636658985?text=Halo%20saya%20mau%20booking%20Potong%20Rambut%20Pria2"
+    desc: "Spesialis fade haircut — skin fade, low fade, mid fade, high fade. Teknik blending sempurna untuk tampilan modern dan rapi khas barbershop Bekasi."
   },
   {
     title: "Hair Styling",
-    desc: "Penataan rambut profesional menggunakan produk berkualitas. Tampilan tahan lama yang sesuai gaya hidup Anda dari tangan barber terlatih.",
-    link:"https://wa.me/6289636658985?text=Halo%20saya%20mau%20booking%20Potong%20Rambut%20Pria3"
-
+    desc: "Penataan rambut profesional menggunakan produk berkualitas. Tampilan tahan lama yang sesuai gaya hidup Anda dari tangan barber terlatih."
   },
   {
     title: "Cuci Rambut",
-    desc: "Layanan cuci rambut lengkap dengan pijatan kepala yang menyegarkan. Tersedia setelah potong maupun sebagai layanan terpisah di Haircut Inside Barbershop.",
-    link:"https://wa.me/6289636658985?text=Halo%20saya%20mau%20booking%20Potong%20Rambut%20Pria4"
+    desc: "Layanan cuci rambut lengkap dengan pijatan kepala yang menyegarkan. Tersedia setelah potong maupun sebagai layanan terpisah di Haircut Inside Barbershop."
   }
-];    
+];
 
 const alasan = [
   {
@@ -69,22 +64,32 @@ const alasan = [
   }
 ];
 
+// Review asli dari Google Maps (top rating 5 bintang).
 const testimoni = [
   {
-    nama: "Rizky A.",
-    teks: "Barber-nya skilled banget, hasilnya rapi dan sesuai request. Fade-nya clean, recommended banget buat yang mau potong di Harapan Indah!"
+    nama: "angelikarose16",
+    localGuide: true,
+    teks: "Mantapp, kakaknya sabar dan telaten pegang anak2. Bakal langganan.. Thanks Kak Shemiko. God bless"
   },
   {
-    nama: "Danu P.",
-    teks: "Tempatnya nyaman, bersih, dan harganya reasonable. Udah jadi langganan di sini sejak setahun lalu. Barber-nya friendly juga."
+    nama: "Gita William",
+    localGuide: false,
+    teks: "Udah langganan di sini lama banget dan udh sering tukar voucher free haircutnya juga karena emang sebagus dan sekeren ithu guys ✌️"
   },
   {
-    nama: "Hendra S.",
-    teks: "Bawa anak potong rambut di sini, anaknya nggak takut dan hasilnya bagus. Recommended untuk keluarga yang cari barbershop di Bekasi."
+    nama: "Syadidan Nuraulia",
+    localGuide: false,
+    teks: "mantap pengetahuan tentang rambut, point point untuk rambut yg disampaikan sangat mudah dimengerti dan dari mulai komunikasi sampai treatment sangat ok, Kapster Friendly, untuk harapan indah dan sekitar nya, boleh cobain potong disini"
   },
   {
-    nama: "Fajar M.",
-    teks: "Buka sampai malam jadi bisa potong setelah pulang kerja. Lokasi di Harapan Indah gampang dicari, pelayanannya cepat dan profesional."
+    nama: "Rengga Jati Janottama",
+    localGuide: true,
+    teks: "Eksekusi rapi dan kelihatan dikerjakan oleh barber yang benar-benar paham craft, bukan asal potong. Barber-nya sharp, komunikatif, dan mampu menerjemahkan request jadi hasil nyata—no overpromise"
+  },
+  {
+    nama: "maria michellinda",
+    localGuide: false,
+    teks: "Thankyou abang yg tattooan udh bikin keren rambut gw, cocok bgt sama pelayanannya terbaik pokoknya, nyaman jg tempatnya, rekomen bgt !!"
   }
 ];
 
@@ -118,31 +123,50 @@ const faq = [
 const capsters = [
   {
     id: "capster-1",
-    name: "Bang Rio",
-    role: "Senior Barber",
-    specialty: "Fade & Skin Fade Specialist",
+    name: "Stenly",
+    role: "Professional Barber",
+    specialty: "Fade • Hair Perm • Hair Design",
+    experience: "Berpengalaman lebih dari 5 tahun",
     photo: "/images/capster/capster-1.jpg",
-    photoFallback: "https://images.unsplash.com/photo-1622287162716-f311baa1a2b8?w=400&h=400&fit=crop&auto=format&q=80",
-    bio: "Berpengalaman lebih dari 6 tahun menangani fade haircut dan styling pria. Teliti dan komunikatif soal referensi gaya rambut."
+    photoFallback: "https://images.unsplash.com/photo-1708531377476-b5949e79da6d?w=400&h=400&fit=crop&auto=format&q=80",
+    isTemporaryImage: true,
+    bio: "Berpengalaman lebih dari 5 tahun, komunikatif dan menyesuaikan model rambut."
   },
   {
     id: "capster-2",
-    name: "Bang Fajar",
-    role: "Barber",
-    specialty: "Classic Cut & Kids Haircut",
+    name: "Matthew",
+    role: "Professional Barber",
+    specialty: "Korean Style • Fading • Hair Perm • Down Perm",
+    experience: "Berpengalaman lebih dari 5 tahun",
     photo: "/images/capster/capster-2.jpg",
-    photoFallback: "https://images.unsplash.com/photo-1567894340315-735d7c361db0?w=400&h=400&fit=crop&auto=format&q=80",
-    bio: "Sabar menangani potong rambut anak-anak dan spesialis classic cut rapi untuk tampilan sehari-hari."
+    photoFallback: "https://images.unsplash.com/photo-1670333637515-e7c2162591f0?w=400&h=400&fit=crop&auto=format&q=80",
+    isTemporaryImage: true,
+    bio: "Membantu setiap pelanggan menemukan gaya rambut yang paling sesuai agar tampil lebih percaya diri."
+  },
+  {
+    id: "capster-3",
+    name: "Shemico",
+    role: "Professional Barber",
+    specialty: "Fade • Hair Perm • Hair Coloring",
+    experience: "Berpengalaman lebih dari 5 tahun",
+    photo: "/images/capster/capster-3.jpg",
+    photoFallback: "https://images.unsplash.com/photo-1687276153083-abf919555227?w=400&h=400&fit=crop&auto=format&q=80",
+    isTemporaryImage: true,
+    bio: "Rapi, presisi, dan mengikuti tren terbaru, Mengutamakan kenyamanan serta kepuasan pelanggan."
   }
 ];
 
+// 1 model rambut = 1 foto, kecuali Hair Design (boleh 2 foto/angle) — total 7 foto.
+// Foto lokal per capster belum tersedia, sementara pakai fallback dari Unsplash
+// (isTemporaryImage) sampai foto asli klien di-upload ke folder ini.
 const galeri = [
-  { src: "/images/gallery/capster-1/01.jpg", fallback: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=900&auto=format&q=80", alt: "Barber profesional memotong rambut pria di Haircut Inside Barbershop Harapan Indah Bekasi", wide: true, capster: "capster-1" },
-  { src: "/images/gallery/general/01.jpg", fallback: "https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=900&auto=format&q=80", alt: "Interior modern Haircut Inside Barbershop di Kota Harapan Indah Bekasi", wide: true, capster: "none" },
-  { src: "/images/gallery/capster-1/02.jpg", fallback: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=600&auto=format&q=80", alt: "Proses fade haircut di barbershop terbaik Harapan Indah Bekasi", wide: false, capster: "capster-1" },
-  { src: "/images/gallery/capster-2/01.jpg", fallback: "https://images.unsplash.com/photo-1562004760-aceed7bb0fe3?w=600&auto=format&q=80", alt: "Potong rambut pria profesional di barbershop Bekasi", wide: false, capster: "capster-2" },
-  { src: "/images/gallery/capster-2/02.jpg", fallback: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=600&auto=format&q=80", alt: "Hasil haircut fade rapi di Haircut Inside Barbershop Harapan Indah", wide: false, capster: "capster-2" },
-  { src: "/images/gallery/general/02.jpg", fallback: "https://images.unsplash.com/photo-1584515933487-779824d29309?w=600&auto=format&q=80", alt: "Suasana barbershop premium kawasan Harapan Indah Kota Bekasi", wide: false, capster: "none" }
+  { src: "/images/gallery/capster-1/01.jpg", fallback: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=900&auto=format&q=80", alt: "Hasil fade haircut rapi oleh Stenly di Haircut Inside Barbershop Harapan Indah Bekasi", wide: true, capster: "capster-1", isTemporaryImage: true },
+  { src: "/images/gallery/capster-1/02.jpg", fallback: "https://images.unsplash.com/photo-1568339434343-2a640a1a9946?w=900&auto=format&q=80", alt: "Hair design pola shaved art karya Stenly di Haircut Inside Barbershop Harapan Indah", wide: true, capster: "capster-1", isTemporaryImage: true },
+  { src: "/images/gallery/capster-1/03.jpg", fallback: "https://images.unsplash.com/photo-1635273051937-a0ddef9573b6?w=600&auto=format&q=80", alt: "Proses pengerjaan hair design dari sisi lain oleh Stenly di Haircut Inside Barbershop", wide: false, capster: "capster-1", isTemporaryImage: true },
+  { src: "/images/gallery/capster-2/01.jpg", fallback: "https://images.unsplash.com/photo-1705247815016-fb23ebf07a44?w=600&auto=format&q=80", alt: "Korean style haircut modern hasil karya Matthew di Haircut Inside Barbershop Harapan Indah", wide: false, capster: "capster-2", isTemporaryImage: true },
+  { src: "/images/gallery/capster-2/02.jpg", fallback: "https://images.unsplash.com/photo-1618049049816-43a00d5b0c3d?w=600&auto=format&q=80", alt: "Down perm rambut pria hasil karya Matthew di Haircut Inside Barbershop Harapan Indah Bekasi", wide: false, capster: "capster-2", isTemporaryImage: true },
+  { src: "/images/gallery/capster-3/01.jpg", fallback: "https://images.unsplash.com/photo-1630827020718-3433092696e7?w=900&auto=format&q=80", alt: "Hair perm rapi hasil karya Shemico di Haircut Inside Barbershop Harapan Indah Bekasi", wide: true, capster: "capster-3", isTemporaryImage: true },
+  { src: "/images/gallery/capster-3/02.jpg", fallback: "https://images.unsplash.com/photo-1705247372456-b6ae4b54cc90?w=900&auto=format&q=80", alt: "Hair coloring modern hasil karya Shemico di Haircut Inside Barbershop Harapan Indah Bekasi", wide: true, capster: "capster-3", isTemporaryImage: true }
 ];
 
 const jsonLd = {
@@ -160,16 +184,21 @@ const jsonLd = {
       "image": "https://hibarbershop.com/images/ogimage.jpg",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "[Nama Jalan dan Nomor]",
-        "addressLocality": "Harapan Indah",
-        "addressRegion": "Bekasi",
-        "postalCode": "17131",
+        "streetAddress": "Blk. U7 Jl. Taman Harapan Indah No. 5, RT.10/RW.8, Pusaka Rakyat, Kec. Tarumajaya",
+        "addressLocality": "Kabupaten Bekasi",
+        "addressRegion": "Jawa Barat",
+        "postalCode": "17214",
         "addressCountry": "ID"
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": "-6.1750",
-        "longitude": "107.0000"
+        "latitude": "-6.1688141",
+        "longitude": "106.9750297"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "679"
       },
       "openingHoursSpecification": [
         {
@@ -179,7 +208,7 @@ const jsonLd = {
           "closes": "21:00"
         }
       ],
-      "hasMap": "https://maps.google.com/?q=Harapan+Indah+Bekasi",
+      "hasMap": "https://share.google/1mg0vd2EYwo3Z0GDA",
       "areaServed": { "@type": "Place", "name": "Harapan Indah, Bekasi, Jawa Barat" }
     },
     {
@@ -299,7 +328,6 @@ const jsonLd = {
               </div>
               <h3 class="text-2xl font-secondary font-medium mb-4">{item.title}</h3>
               <p class="text-white/75 font-light leading-relaxed">{item.desc}</p>
-              <a class="button button-dark mt-4 px-10" href={item.link} target="_blank"><span>tes</span></a>
             </div>
           </div>
         ))}
@@ -423,7 +451,7 @@ const jsonLd = {
 
       <div class="row justify-center md:gx-6 gy-6">
         {capsters.map((c, i) => (
-          <div class="md:col-6 lg:col-5" data-aos="fade-up-sm" data-aos-delay={i * 75}>
+          <div class="md:col-6 lg:col-4" data-aos="fade-up-sm" data-aos-delay={i * 75}>
             <div class="h-full border border-white/10 rounded-2xl p-6 text-center">
               <img
                 src={c.photo}
@@ -437,6 +465,7 @@ const jsonLd = {
               <h3 class="text-xl font-secondary font-medium">{c.name}</h3>
               <div class="text-sm font-medium mt-1" style="color:#BE9651;">{c.role}</div>
               <div class="text-white/40 text-xs uppercase tracking-widest mt-1">{c.specialty}</div>
+              <div class="text-white/40 text-xs mt-2">{c.experience}</div>
               <p class="text-white/70 font-light leading-relaxed mt-4">{c.bio}</p>
             </div>
           </div>
@@ -468,7 +497,6 @@ const jsonLd = {
         {capsters.map((c) => (
           <button type="button" class="gallery-filter-btn" data-filter={c.id}>{c.name}</button>
         ))}
-        <button type="button" class="gallery-filter-btn" data-filter="none">Tak Berkategori</button>
       </div>
 
       <div class="row md:gx-4 gy-4">
@@ -512,12 +540,22 @@ const jsonLd = {
           <p class="text-white/75 text-lg font-light mt-4 max-w-xl mx-auto leading-relaxed">
             Apa kata pelanggan setia Haircut Inside Barbershop di Harapan Indah Bekasi tentang layanan kami.
           </p>
+          <a
+            href="https://share.google/1mg0vd2EYwo3Z0GDA"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 mt-6 px-5 py-2.5 rounded-full border border-white/10 hover:border-white/30 transition-colors duration-300"
+          >
+            <span class="text-lg tracking-widest" style="color:#BE9651;" aria-hidden="true">&#9733;</span>
+            <span class="font-secondary text-lg font-medium">4.9</span>
+            <span class="text-white/50 text-sm font-light">dari 679 review Google</span>
+          </a>
         </div>
       </div>
 
       <div class="row md:gx-6 gy-6">
         {testimoni.map((item, i) => (
-          <div class="md:col-6 lg:col-3" data-aos="fade-up-sm" data-aos-delay={i * 75}>
+          <div class="md:col-6 lg:col-4" data-aos="fade-up-sm" data-aos-delay={i * 75}>
             <div class="h-full border border-white/10 rounded-2xl p-6 flex flex-col">
               <div class="mb-4 text-lg tracking-widest" style="color:#BE9651;" aria-label="5 bintang">
                 &#9733;&#9733;&#9733;&#9733;&#9733;
@@ -525,7 +563,12 @@ const jsonLd = {
               <p class="text-white/75 font-light leading-relaxed mb-6 flex-1">
                 &ldquo;{item.teks}&rdquo;
               </p>
-              <div class="font-medium text-sm" style="color:#BE9651;">— {item.nama}</div>
+              <div class="flex items-center gap-2">
+                <span class="font-medium text-sm" style="color:#BE9651;">— {item.nama}</span>
+                {item.localGuide && (
+                  <span class="text-white/40 text-xs uppercase tracking-wide">· Local Guide</span>
+                )}
+              </div>
             </div>
           </div>
         ))}
@@ -606,9 +649,9 @@ const jsonLd = {
             <div class="border border-white/10 rounded-2xl p-6">
               <h3 class="font-secondary text-xl font-medium mb-3" style="color:#BE9651;">Alamat</h3>
               <address class="text-white/75 font-light not-italic leading-relaxed">
-                [Nama Jalan dan Nomor]<br />
-                Harapan Indah, Bekasi Utara<br />
-                Kota Bekasi, Jawa Barat 17131
+                Blk. U7 Jl. Taman Harapan Indah No. 5, RT.10/RW.8<br />
+                Pusaka Rakyat, Kec. Tarumajaya<br />
+                Kabupaten Bekasi, Jawa Barat 17214
               </address>
             </div>
 
@@ -617,18 +660,8 @@ const jsonLd = {
               <p class="text-white/75 font-light">Senin &ndash; Minggu: <strong class="text-white">09.00 &ndash; 21.00 WIB</strong></p>
             </div>
 
-            <div class="border border-white/10 rounded-2xl p-6">
-              <h3 class="font-secondary text-xl font-medium mb-3" style="color:#BE9651;">Akses &amp; Landmark</h3>
-              <ul class="text-white/75 font-light space-y-2">
-                <li>&#8226; Dekat Gerbang Tol Harapan Indah</li>
-                <li>&#8226; Mudah diakses dari Bekasi Utara &amp; Bekasi Barat</li>
-                <li>&#8226; Area parkir tersedia</li>
-                <li>&#8226; Melayani: Harapan Indah, Kota Harapan Indah, Bekasi</li>
-              </ul>
-            </div>
-
             <a
-              href="https://wa.me/6289636658985"
+              href="https://wa.me/6289636658985?text=Hai%20Bang%2C%20saya%20mau%20barber%20di%20Haircut%20Inside"
               class="button button-dark w-full text-center block"
               target="_blank"
               rel="noopener noreferrer"

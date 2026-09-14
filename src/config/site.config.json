@@ -32,7 +32,12 @@
     {
       "name": "WA",
       "fullName": "WhatsApp",
-      "link": "https://wa.me/6289636658985"
+      "link": "https://wa.me/6289636658985?text=Hai%20Bang%2C%20saya%20mau%20barber%20di%20Haircut%20Inside"
+    },
+    {
+      "name": "Maps",
+      "fullName": "Google Maps",
+      "link": "https://share.google/1mg0vd2EYwo3Z0GDA"
     }
   ]
 }
