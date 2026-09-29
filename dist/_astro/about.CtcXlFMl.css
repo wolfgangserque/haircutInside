@@ -1,0 +1,1 @@
+.header{transition:.3s ease}.navbar a{transition:.3s color 0s,.3s opacity 0s}.navbar.navbarOpen a{transition:.3s color 0s,.3s opacity .3s}.navbar .indicator{transition:.45s cubic-bezier(.075,.82,.165,1)}.navbar .indicator:before{content:"";border-radius:9999px;height:calc(100% - 1rem);top:.5rem;width:100%;position:absolute;left:0;background-color:#ffffff1a}
