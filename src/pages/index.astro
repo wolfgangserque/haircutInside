@@ -120,16 +120,18 @@ const capsters = [
   {
     id: "capster-1",
     name: "Stenly",
-    role: "Professional Barber",
+    fullName: "Stenly Reynhard",
+    role: "Profesional Barber",
     specialty: "Fade • Hair Perm • Hair Design",
     experience: "Berpengalaman lebih dari 5 tahun",
     photo: "/images/update/capster-stanley.jpg",
-    bio: "Berpengalaman lebih dari 5 tahun, komunikatif dan menyesuaikan model rambut."
+    bio: "Teliti, komunikatif, dan menyesuaikan model rambut."
   },
   {
     id: "capster-2",
     name: "Matthew",
-    role: "Professional Barber",
+    fullName: "Matthew Hizkia",
+    role: "Profesional Barber",
     specialty: "Korean Style • Fading • Hair Perm • Down Perm",
     experience: "Berpengalaman lebih dari 5 tahun",
     photo: "/images/update/capster-matthew.jpg",
@@ -138,11 +140,12 @@ const capsters = [
   {
     id: "capster-3",
     name: "Shemico",
-    role: "Professional Barber",
+    fullName: "Shemico Kelly",
+    role: "Profesional Barber",
     specialty: "Fade • Hair Perm • Hair Coloring",
     experience: "Berpengalaman lebih dari 5 tahun",
     photo: "/images/update/capster-semrico.jpg",
-    bio: "Rapi, presisi, dan mengikuti tren terbaru, Mengutamakan kenyamanan serta kepuasan pelanggan."
+    bio: "Rapi, presisi, dan mengikuti tren terbaru. Mengutamakan kenyamanan serta kepuasan pelanggan."
   }
 ];
 
@@ -458,14 +461,15 @@ const jsonLd = {
             <div class="h-full border border-white/10 rounded-2xl p-6 text-center">
               <img
                 src={c.photo}
-                alt={`Foto ${c.name}, ${c.role} di Haircut Inside Barbershop`}
+                alt={`Foto ${c.fullName}, ${c.role} di Haircut Inside Barbershop`}
                 width="120"
                 height="120"
                 loading="lazy"
                 class="w-[120px] h-[120px] rounded-full object-cover object-[center_20%] mx-auto mb-4 border border-white/10"
               />
-              <h3 class="text-xl font-secondary font-medium">{c.name}</h3>
+              <h3 class="text-xl font-secondary font-medium">{c.fullName}</h3>
               <div class="text-sm font-medium mt-1" style="color:#BE9651;">{c.role}</div>
+              <div class="text-white/50 text-xs mt-3">Pola &amp; gaya yang sering dibuat:</div>
               <div class="text-white/40 text-xs uppercase tracking-widest mt-1">{c.specialty}</div>
               <div class="text-white/40 text-xs mt-2">{c.experience}</div>
               <p class="text-white/70 font-light leading-relaxed mt-4">{c.bio}</p>
