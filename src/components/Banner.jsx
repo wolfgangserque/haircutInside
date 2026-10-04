@@ -34,7 +34,7 @@ const Banner = ({ banner }) => {
         <div className="row h-full items-center">
           <div className={`col-12 text-center`}>
             <div className="relative mb-6 mx-auto inline-block md:hidden">
-              <div className="bg-[#E3DFDC] mx-5 rounded-full overflow-hidden">
+              <div className="bg-[#18181A] mx-5 rounded-full overflow-hidden">
                 <img
                   className="mx-auto"
                   src={image}
@@ -69,7 +69,7 @@ const Banner = ({ banner }) => {
                 {first_name}
               </span>
               <div className="relative my-4 md:my-0 hidden md:block">
-                <div className="bg-[#E3DFDC] mx-5 rounded-full overflow-hidden">
+                <div className="bg-[#18181A] mx-5 rounded-full overflow-hidden">
                   <img
                     className="mx-auto"
                     src={image}

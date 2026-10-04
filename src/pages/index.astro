@@ -33,6 +33,33 @@ const layanan = [
   }
 ];
 
+// Layanan spesial / panggilan — foto di /public/images/services.
+const waBase = "https://wa.me/6289636658985?text=";
+const layananSpesial = [
+  {
+    title: "Haircut for Wedding",
+    image: "/images/services/haircut-wedding.jpeg",
+    alt: "Layanan Haircut for Wedding oleh Haircut Inside Barbershop — grooming pengantin pria",
+    price: "Rp 1,2 jt – 2,0 jt",
+    desc: "Grooming lengkap untuk hari spesial Anda: haircut, hairstyling, hair product, hair solution, dan hair treatment. Groom like a gentleman.",
+    wa: "Hai Bang, saya mau tanya layanan Haircut for Wedding"
+  },
+  {
+    title: "Haircut Home Service",
+    image: "/images/services/haircut-home-service.jpeg",
+    alt: "Layanan Haircut Home Service oleh Haircut Inside Barbershop — potong rambut di rumah",
+    desc: "Siap melayani Anda di rumah. Potong rambut nyaman tanpa keluar rumah dengan peralatan yang bersih dan higienis.",
+    wa: "Hai Bang, saya mau booking Haircut Home Service"
+  },
+  {
+    title: "Haircut for Office",
+    image: "/images/services/haircut-office.jpeg",
+    alt: "Layanan Haircut for Office oleh Haircut Inside Barbershop — potong rambut di kantor",
+    desc: "Barber kami datang ke kantor Anda. Praktis untuk tim dan profesional sibuk agar tetap tampil rapi tanpa meninggalkan pekerjaan.",
+    wa: "Hai Bang, saya mau tanya layanan Haircut for Office"
+  }
+];
+
 const alasan = [
   {
     title: "Barber Profesional & Berpengalaman",
@@ -262,10 +289,10 @@ const jsonLd = {
         <div class="lg:col-6" data-aos="fade-right" data-aos-duration="600">
           <div class="relative">
             <img
-              src="/images/update/about.jpg"
+              src="/images/update/tentang-kami.jpg"
               alt="Interior premium Haircut Inside Barbershop di Harapan Indah Bekasi — suasana modern dan profesional"
-              width="960"
-              height="720"
+              width="505"
+              height="344"
               class="rounded-2xl w-full aspect-[4/3] object-cover"
               loading="lazy"
             />
@@ -334,6 +361,46 @@ const jsonLd = {
               </div>
               <h3 class="text-2xl font-secondary font-medium mb-4">{item.title}</h3>
               <p class="text-white/75 font-light leading-relaxed">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div id="layanan-spesial" class="text-center mt-20 mb-10 scroll-mt-28">
+        <h3 class="text-3xl md:text-4xl font-secondary font-medium">Layanan Spesial &amp; Panggilan</h3>
+        <p class="text-white/75 text-lg font-light mt-3 max-w-2xl mx-auto leading-relaxed">
+          Barber kami siap datang ke tempat Anda — untuk hari pernikahan, di rumah, maupun di kantor.
+        </p>
+      </div>
+
+      <div class="row md:gx-6 gy-6">
+        {layananSpesial.map((item, i) => (
+          <div class="lg:col-4 md:col-6" data-aos="fade-up-sm" data-aos-delay={i * 75}>
+            <div class="h-full border border-white/10 rounded-2xl overflow-hidden flex flex-col hover:border-white/30 transition-colors duration-300">
+              <img
+                src={item.image}
+                alt={item.alt}
+                width="591"
+                height="392"
+                loading="lazy"
+                class="w-full aspect-[3/2] object-cover"
+              />
+              <div class="p-6 md:p-8 flex flex-col flex-1">
+                <h4 class="text-2xl font-secondary font-medium mb-2">{item.title}</h4>
+                {item.price && (
+                  <div class="font-secondary text-lg font-medium mb-3" style="color:#BE9651;">{item.price}</div>
+                )}
+                <p class="text-white/75 font-light leading-relaxed mb-6 flex-1">{item.desc}</p>
+                <a
+                  href={waBase + encodeURIComponent(item.wa)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-sm font-medium uppercase tracking-widest"
+                  style="color:#BE9651;"
+                >
+                  Hubungi via WhatsApp &#8599;
+                </a>
+              </div>
             </div>
           </div>
         ))}

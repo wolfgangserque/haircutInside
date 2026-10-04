@@ -7,70 +7,47 @@ const seoKw     = "Haircut Inside Barbershop, Barbershop Harapan Indah, Barbersh
 
 const pageLinks = [
   {
-    group: "Jelajahi Website",
+    group: "Link Kami",
     accent: "#BE9651",
     items: [
       {
-        label: "Website Haircut Inside Barbershop",
-        sub:   "hibarbershop.com — halaman utama",
-        href:  "/",
-        icon:  "◈"
+        label: "Lokasi Kami",
+        sub:   "Buka di Google Maps — Harapan Indah, Bekasi",
+        href:  "https://share.google/1mg0vd2EYwo3Z0GDA",
+        icon:  "◉",
+        external: true
       },
       {
-        label: "Layanan Kami",
-        sub:   "Potong pria · Fade haircut · Hair styling · Cuci rambut",
-        href:  "/#layanan",
-        icon:  "✦"
-      },
-      {
-        label: "Daftar Harga",
-        sub:   "Mulai dari Rp 25.000 — transparan & terjangkau",
-        href:  "/#harga",
-        icon:  "◎"
-      },
-      {
-        label: "Galeri",
-        sub:   "Potret hasil kerja barber kami",
-        href:  "/#galeri",
-        icon:  "◻"
-      },
-      {
-        label: "Lokasi & Cara ke Sini",
-        sub:   "Harapan Indah, Bekasi Utara",
-        href:  "/#lokasi",
-        icon:  "◉"
-      },
-      {
-        label: "FAQ",
-        sub:   "Pertanyaan yang sering diajukan",
-        href:  "/#faq",
-        icon:  "◇"
-      },
-    ]
-  },
-  {
-    group: "Hubungi Kami",
-    accent: "#5161BE",
-    items: [
-      {
-        label: "Chat via WhatsApp",
+        label: "Kontak WhatsApp",
         sub:   "Booking & tanya langsung — respon cepat",
         href:  "https://wa.me/6289636658985?text=Hai%20Bang%2C%20saya%20mau%20barber%20di%20Haircut%20Inside",
         icon:  "✉",
         external: true
       },
       {
-        label: "Instagram",
-        sub:   "@hibarbershop — follow untuk konten terbaru",
-        href:  "https://instagram.com/",
-        icon:  "◈",
+        label: "Website Utama",
+        sub:   "hibarbershop.com — layanan, harga & galeri",
+        href:  "/",
+        icon:  "◈"
+      },
+      {
+        label: "Review Kami",
+        sub:   "Beri ulasan Anda di Google",
+        href:  "https://search.google.com/local/writereview?placeid=ChIJUclHOEyKaS4RncIbt_gaM1k",
+        icon:  "★",
         external: true
       },
       {
-        label: "Facebook",
-        sub:   "Haircut Inside Barbershop Harapan Indah",
-        href:  "https://facebook.com/",
-        icon:  "◉",
+        label: "Layanan Spesial",
+        sub:   "Wedding · Home Service · Office",
+        href:  "/#layanan-spesial",
+        icon:  "✦"
+      },
+      {
+        label: "TikTok",
+        sub:   "@haircut.inside — tonton konten terbaru kami",
+        href:  "https://www.tiktok.com/@haircut.inside",
+        icon:  "♪",
         external: true
       },
     ]
@@ -80,7 +57,7 @@ const pageLinks = [
 const infoChips = [
   { label: "Jam Buka",  value: "09.00 – 21.00", sub: "Senin – Minggu" },
   { label: "Lokasi",    value: "Harapan Indah",  sub: "Bekasi, Jawa Barat" },
-  { label: "Layanan",   value: "4 Layanan",       sub: "Potong · Fade · Styling · Cuci" }
+  { label: "Layanan",   value: "7 Layanan",       sub: "Barbershop · Home · Office · Wedding" }
 ];
 ---
 
@@ -104,7 +81,7 @@ const infoChips = [
           <!-- avatar -->
           <div class="bio-avatar-ring mx-auto mb-5">
             <img
-              src="/images/update/hero-square.jpg"
+              src="/images/logo.png"
               alt="Haircut Inside Barbershop — Barbershop Harapan Indah Bekasi"
               width="120"
               height="120"
@@ -130,20 +107,6 @@ const infoChips = [
             Barbershop premium di kawasan Harapan Indah Bekasi — barber profesional, harga terjangkau.
           </p>
 
-        </div>
-
-
-        <!-- ════════════════════════════════════════
-             INFO CHIPS
-        ════════════════════════════════════════ -->
-        <div class="grid grid-cols-3 gap-3 mb-10" data-aos="fade-up-sm" data-aos-delay="75">
-          {infoChips.map(chip => (
-            <div class="bio-chip text-center">
-              <div class="bio-chip-value">{chip.value}</div>
-              <div class="bio-chip-label">{chip.label}</div>
-              <div class="bio-chip-sub">{chip.sub}</div>
-            </div>
-          ))}
         </div>
 
 
@@ -194,6 +157,20 @@ const infoChips = [
 
           </div>
         ))}
+
+
+        <!-- ════════════════════════════════════════
+             INFO CHIPS
+        ════════════════════════════════════════ -->
+        <div class="grid grid-cols-3 gap-3 mt-2" data-aos="fade-up-sm" data-aos-delay="300">
+          {infoChips.map(chip => (
+            <div class="bio-chip text-center">
+              <div class="bio-chip-value">{chip.value}</div>
+              <div class="bio-chip-label">{chip.label}</div>
+              <div class="bio-chip-sub">{chip.sub}</div>
+            </div>
+          ))}
+        </div>
 
 
         <!-- ════════════════════════════════════════
